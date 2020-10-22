@@ -3,6 +3,17 @@ using Npgsql;
 
 namespace ADOExample
 {
+
+    class Category
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return $"Id = {Id}, Name = {Name}";
+        }
+    }
     class Program
     {
         static void Main(string[] args)
@@ -21,7 +32,15 @@ namespace ADOExample
 
             while (reader.Read())
             {
-                Console.WriteLine($"Id={reader.GetInt32(0)}, Name={reader.GetString(1)}");
+                var category = new Category
+                {
+                    Id = reader.GetInt32(0),
+                    Name = reader.GetString(1)
+                };
+
+                Console.WriteLine(category);
+
+                //Console.WriteLine($"Id={reader.GetInt32(0)}, Name={reader.GetString(1)}");
             }
         }
     }
