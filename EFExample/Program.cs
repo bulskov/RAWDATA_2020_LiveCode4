@@ -9,6 +9,15 @@ namespace EFExample
     {
         static void Main(string[] args)
         {
+
+            var dataService = new DataService();
+
+            foreach (var elem in dataService.GetProducts())
+            {
+                Console.WriteLine(elem);
+            }
+
+
             //using var ctx = new NorthWindContext();
 
             //foreach (var product in ctx.Products.Include(x => x.Category))
