@@ -10,21 +10,26 @@ namespace EFExample
         {
             using var ctx = new NorthWindContext();
 
-            var cat = ctx.Categories.Find(9);
 
-            cat.Name = "UpdateTest";
-            cat.Description = "fdsjfsldkjfsdlkf";
 
-            //var maxId = ctx.Categories.Max(x => x.Id);
 
-            //ctx.Categories.Add(new Category {Id = maxId + 1, Name = "Testing"});
+            //var cat = ctx.Categories.Find(9);
 
-            ctx.SaveChanges();
+            //ctx.Categories.Remove(cat);
 
-            foreach (var category in ctx.Categories)
-            {
-                Console.WriteLine(category);
-            }
+            ////cat.Name = "UpdateTest";
+            ////cat.Description = "fdsjfsldkjfsdlkf";
+
+            ////var maxId = ctx.Categories.Max(x => x.Id);
+
+            ////ctx.Categories.Add(new Category {Id = maxId + 1, Name = "Testing"});
+
+            //ctx.SaveChanges();
+
+            //foreach (var category in ctx.Categories)
+            //{
+            //    Console.WriteLine(category);
+            //}
         }
     }
 }
