@@ -10,6 +10,11 @@ namespace EFExample
         {
             using var ctx = new NorthWindContext();
 
+            var cat = ctx.Categories.Find(9);
+
+            cat.Name = "UpdateTest";
+            cat.Description = "fdsjfsldkjfsdlkf";
+
             //var maxId = ctx.Categories.Max(x => x.Id);
 
             //ctx.Categories.Add(new Category {Id = maxId + 1, Name = "Testing"});
