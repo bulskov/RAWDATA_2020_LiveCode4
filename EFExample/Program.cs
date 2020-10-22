@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace EFExample
 {
@@ -8,9 +9,12 @@ namespace EFExample
     {
         static void Main(string[] args)
         {
-            using var ctx = new NorthWindContext();
+            //using var ctx = new NorthWindContext();
 
-
+            //foreach (var product in ctx.Products.Include(x => x.Category))
+            //{
+            //    Console.WriteLine(product);
+            //}
 
 
             //var cat = ctx.Categories.Find(9);

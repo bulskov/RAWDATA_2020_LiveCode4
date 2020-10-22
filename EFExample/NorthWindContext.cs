@@ -33,6 +33,7 @@ namespace EFExample
             modelBuilder.Entity<Product>().ToTable("products");
             modelBuilder.Entity<Product>().Property(x => x.Id).HasColumnName("productid");
             modelBuilder.Entity<Product>().Property(x => x.Name).HasColumnName("productname");
+            modelBuilder.Entity<Product>().Property(x => x.CategoryId).HasColumnName("categoryid");
         }
     }
 
