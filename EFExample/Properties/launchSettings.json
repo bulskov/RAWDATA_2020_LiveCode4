@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "EFExample": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "connString": "host=localhost;db=northwind;uid=bulskov;pwd=henrik"
+      }
+    }
+  }
+}

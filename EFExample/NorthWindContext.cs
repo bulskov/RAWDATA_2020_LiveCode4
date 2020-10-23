@@ -11,6 +11,13 @@ namespace EFExample
 {
     public class NorthWindContext : DbContext
     {
+        private readonly string _connectionString;
+
+        public NorthWindContext(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
         public static readonly ILoggerFactory MyLoggerFactory
             = LoggerFactory.Create(builder => { builder.AddConsole(); });
 
@@ -20,7 +27,7 @@ namespace EFExample
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLoggerFactory(MyLoggerFactory);
-            optionsBuilder.UseNpgsql("host=localhost;db=northwind;uid=bulskov;pwd=henrik");
+            optionsBuilder.UseNpgsql(_connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

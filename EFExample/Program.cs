@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace EFExample
 {
@@ -10,7 +11,12 @@ namespace EFExample
         static void Main(string[] args)
         {
 
-            var dataService = new DataService();
+            var config = new ConfigurationBuilder()
+                .AddJsonFile("config.json")
+                .AddEnvironmentVariables()
+                .Build();
+
+            var dataService = new DataService(config["connectionString"]);
 
             foreach (var elem in dataService.GetProducts())
             {
